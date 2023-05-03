@@ -1,3 +1,3 @@
 {
-  "presets": ["next/core-web-vitals"]
+  "presets": ["@babel/preset-react"]
 }
