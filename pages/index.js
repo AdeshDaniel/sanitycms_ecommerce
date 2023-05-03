@@ -1,8 +1,9 @@
 import React from "react";
 
+import { client } from "@/lib/client";
 import { Product, FooterBanner, Herobanner } from "@/components";
 
-const Home = () => {
+const Home = ({ products, bannerData }) => {
   return (
     <>
       {/* herobanner component */}
@@ -13,12 +14,24 @@ const Home = () => {
       </div>
       {/* product compoennt */}
       <div className='products-container'>
-        {["product 1", "product 2", "product 3"].map((product) => product)}
+        {products?.map((product) => product.name)}
       </div>
       {/* Footer component */}
-      Footer
+      <FooterBanner />
     </>
   );
+};
+
+export const getServerSideProps = async () => {
+  const query = '*[_type == "product"]';
+  const products = await client.fetch(query);
+
+  const bannerQuery = '*[_type == "banner"]';
+  const bannerData = await client.fetch(bannerQuery);
+
+  return {
+    props: { products, bannerData },
+  };
 };
 
 export default Home;
