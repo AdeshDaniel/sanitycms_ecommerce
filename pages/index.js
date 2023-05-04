@@ -19,7 +19,7 @@ const Home = ({ products, bannerData }) => {
         ))}
       </div>
       {/* Footer component */}
-      <FooterBanner />
+      <FooterBanner footerBanner={bannerData && bannerData[0]} />
     </>
   );
 };
