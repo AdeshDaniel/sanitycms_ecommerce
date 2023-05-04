@@ -1,15 +1,15 @@
 import React from "react";
 
 import { client } from "@/lib/client";
-import { Product, FooterBanner, Herobanner } from "@/components";
+import { Product, FooterBanner, HeroBanner } from "@/components";
 
 const Home = ({ products, bannerData }) => {
   return (
     <>
       {/* herobanner component */}
-      <Herobanner />
+      <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
       <div className='products-heading'>
-        <h2>Best Selling product</h2>
+        <h2></h2>
         <p>Speakers of many variations</p>
       </div>
       {/* product compoennt */}
