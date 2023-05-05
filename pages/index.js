@@ -9,7 +9,7 @@ const Home = ({ products, bannerData }) => {
       {/* herobanner component */}
       <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
       <div className='products-heading'>
-        <h2></h2>
+        <h2>Best Selling Products</h2>
         <p>Speakers of many variations</p>
       </div>
       {/* product compoennt */}
